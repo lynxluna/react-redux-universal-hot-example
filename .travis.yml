@@ -21,7 +21,9 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
+  - rm -fr node_modules
   - npm rebuild node-sass
+  - npm install
   - npm run lint
   - npm test
   - npm run test-node
